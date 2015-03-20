@@ -1,0 +1,5 @@
+{% set difference_now = date("-2days") < date(infection.dataPrzeslania)
+%}
+<td><span class="uwagi">{{ infection.dataPrzeslania|date('Y-m-d H:i') }}</span>
+	{% if difference_now %} <span class="label label-success">nowe</span>{%
+	endif %}</td>

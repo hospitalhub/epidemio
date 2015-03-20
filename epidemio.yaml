@@ -1,0 +1,64 @@
+url:  &url
+  epidemiologia
+pages:
+  - epidemiologia_page_zakazenia
+  - epidemiologia_page_zakazenia_monthly
+  - epidemiologia_page_zakazenia_monthly_raport
+  - epidemiologia_page_epidemio_raport
+menus:
+  - title:      Epidemiologia
+    type:       menu
+    cap:        raport_zakazne
+    link:       epidemiologia
+    class:      Epidemio\WP\Menu
+    callback:   infectionsMenuCallback
+
+  - title:      Raport Epidemiologiczny
+    type:       submenu
+    cap:        raport_zakazne
+    link:       zakazenia
+    class:      Epidemio\WP\Menu
+    callback:   infectionsMenuCallback
+    
+  - title:      ZMO Analiza miesięczna
+    type:       submenu
+    cap:        raport_zakazne
+    link:       zakazenia_monthly
+    class:      Epidemio\WP\Menu
+    callback:   infectionsMonthlyMenuCallback
+    
+        
+  - title:      ZMO raport zbiorczy
+    type:       submenu
+    cap:        raporty_zakazne_zbiorczy
+    link:       zakazenia_monthly_raport
+    class:      Epidemio\WP\Menu
+    callback:   infectionsMonthlyRaportMenuCallback
+    
+  - title:      RE Raport zbiorczy
+    type:       submenu
+    cap:        raporty_zakazne_zbiorczy
+    link:       epidemio_raport
+    class:      Epidemio\WP\Menu
+    callback:   infectionsRaportMenuCallback
+    
+menu-remove: 
+  - url:       epidemiologia
+    page:      epidemiologia
+plugin-styles:
+  - epidemio.css
+plugin-scripts:
+  - epidemio.js
+styles:
+  - bootstrap.min.css
+  - bootstrap-table.min.css
+  - datepicker.css
+scripts:
+  - bootstrap.min.js
+  - bootstrap-datepicker.js
+  - bootstrap-datepicker.pl.js
+  - bootstrap-table.min.js
+  - bootstrap-table-export.min.js
+  - tableExport.js
+  - jquery.base64.js
+  

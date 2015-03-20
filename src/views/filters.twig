@@ -1,0 +1,19 @@
+<?php
+<table>
+	<form action="{{ filters_form_action }}" method="post">
+		Raport: Miesiąc <input id="datepicker" name="date"
+			class="datepicker-month-no-autovalue" size="16" type="text"
+			onchange="this.form.submit()" value="{{ date }}"> <span
+			class="add-on"><i class="icon-th"></i></span> </input> <select
+			onchange="this.form.submit()" name="wardId" class="selectpicker">
+			<option value="null"></option>
+			<option value="all"   {% if (wardId == "all") %} selected="selected"
+				
+{% endif %}>wszystkie</option> {% for ward in wards %}
+			<option value="{{ ward.id }}"           
+{% if (ward.id == wardId) %}
+				selected="selected"           
+{% endif %}>{{ ward.name }}</option> {% endfor %}
+		</select>
+	</form>
+</table>

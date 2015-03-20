@@ -1,0 +1,36 @@
+{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId, 'date' : date, 'filters_form_action' : 'admin.php?page=zakazenia_monthly_raport'} %}
+{% include 'table-top.twig' %}
+<thead>
+	<tr>
+		<th>Miesiąc</th>
+		<th>Data przesłania</th>
+		<th>Oddział</th>
+		<th>LKZMO</th>
+		<th>ZMO1</th>
+		<th>ZMO2</th>
+		<th>ZMO3</th>
+		<th>ZMO4</th>
+		<th>BM</th>
+		<th>PH</th>
+	</tr>
+</thead>
+<tbody>
+	{% for infection in infections %} 
+	<tr>
+		<td>{{ infection.dataRaportu|date('Y-m') }}</td>
+		{% include 'date-diff.twig' %} 
+		<td>{{ infection.ward.name }} <span class="uwagi infection0">{{
+				infection.user.name }}</span>
+		</td>
+		<!-- columns --!>
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.LKZMO} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO1} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO2} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO3} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO4} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.BM} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.PH} %}
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

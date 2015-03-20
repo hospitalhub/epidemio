@@ -1,0 +1,22 @@
+!1 : RAPORT EPIDEMIOLOGICZNY O PACJENTACH
+%Data : <input type="text" class="datepicker" name="dataRaportu" style="width: 100px;" />
+!2 : Objawy zakażenia szpitalnego
+G :  <b> GORĄCZKA ≥ 38 C</b> w trakcie hospitalizacji po 72 godzinach od przyjęcia do szpitala,
+A :  <b> ANTYBIOTYKOTERAPIA</b> po 72 godzinach od przyjęcia do szpitala,
+B :  <b> BIEGUNKA</b> po 72 godzinach od przyjęcia do szpitala ( przynajmniej 3 luźne stolce w krótkim odstępie czasowym ),
+Bzak :  <b> BIEGUNKA</b> pochodzenia zakaźnego po weryfikacji badaniem laboratoryjnym/mikrobiologicznym,
+!3 :  Zdefiniowane KRYTERIA rozpoznawania zakażeń:
+ZMO :   miejsca operowanego,
+ZUM :   dróg moczowych,
+PNEU-VAP :  dróg oddechowych chorych leczonych respiratorem,
+ZODC :   łożyska naczyniowego,
+ZKR :   krwiopochodnych,
+!4 : Hospitalizacja pacjentów z GRUPY OCENY WYSOKIEGO RYZYKA przy przyjęciu do szpitala
+ROZ-III :  przy przyjęciu pacjenta do szpitala z III grupy ryzyka oceny,
+ROZ-II :  przy przyjęciu noworodka po porodzie / przy przyjęciu noworodka do szpitala z II grupy ryzyka oceny,
+!5 : 
+OIOM :  hospitalizacja pacjenta w oddziale intensywnej terapii powyżej dwóch dni kalendarzowych,
+BM :   pobranie materiału do badania mikrobiologicznego,
+IZOL :   izolację pacjenta i/lub przyjęcie pacjenta z listy pacjentów lekoopornych,
+ZAK :   przyjęcie pacjenta z innego szpitala z objawami zakażenia lub zakażeniem potwierdzonym badaniem laboratoryjnym lub mikrobiologicznym,
+%Uwagi : <textarea rows="4" cols="50" maxlength="1000" name="Uwagi"></textarea>

@@ -1,0 +1,59 @@
+{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId, 'date' : date, 'filters_form_action' : 'admin.php?page=epidemio_raport'} %}
+{% include 'table-top.twig' %}
+<thead>
+	<tr style="font-size: 80%;">
+		<th>Data raportu</th>
+		<th>Data przesłania</th>
+		<th>Oddział (Użytkownik)</th>
+		<th>G</th>
+		<!-- data-formatter="tableValueFormatter" -->
+		<th>A</th>
+		<th>B</th>
+		<th>Bzak</th>
+		<th>ZMO</th>
+		<th>ZUM</th>
+		<th>PNEU-VAP</th>
+		<th>ZODC</th>
+		<th>ZKR</th>
+		<th>ROZ-III</th>
+		<th>ROZ-II</th>
+		<th>OIOM</th>
+		<th>BM</th>
+		<th>IZOL</th>
+		<th>ZAK</th>
+		<th>Uwagi</th>
+		<th>Analiza, Konsultacja, Weryfikacja</th>
+	</tr>
+</thead>
+<tbody>
+	{% for infection in infections %}
+	<tr>
+		<td>{{ infection.dataRaportu|date('Y-m-d') }}</td> {% include
+		'date-diff.twig' %}
+		<td>{{ infection.ward.name }} <span class="uwagi infection0">{{
+				infection.user.name }}</span>
+		</td>
+		<!-- columns --!>
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.G} %}
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.A} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.B} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.Bzak} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZUM} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.PNEUVAP} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZODC} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZKR} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ROZIII} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ROZII} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.OIOM} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.BM} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.IZOL} %} 
+			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZAK} %}
+			<td>{{ infection.Uwagi }}</td>
+			<td>
+			<textarea id="weryfikacja{{ infection.id }}" rows="1" cols="30" maxlength="1000">{{ infection.Weryfikacja }}</textarea><br/>
+			<button type="submit" class="saveVeryfication" name="{{ infection.id }}">Zapisz</button></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

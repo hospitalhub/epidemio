@@ -1,0 +1,10 @@
+!1 : MIESIĘCZNA ANALIZA ZAKAŻEŃ MIEJSCA OPEROWANEGO W ODDZIALE / PORADNI
+%Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
+!2 : 
+LKZMO : Ilość założonych <b>kart obserwacji i postępowania z miejscem operowanym</b>
+ZMO1 :  liczba pacjentów zakwalifikowanych do grup ryzyka <b>ZMO I</b>
+ZMO2 :  liczba pacjentów zakwalifikowanych do grup ryzyka <b>ZMO II</b>
+ZMO3 :  liczba pacjentów zakwalifikowanych do grup ryzyka <b>ZMO III</b>
+ZMO4 :  liczba pacjentów zakwalifikowanych do grup ryzyka <b>ZMO IV</b>
+BM :   Ilość <b>badań mikrobiologicznych</b> pobranych z rany pooperacyjnej
+PH :  Liczba <b>powtórnych hospitalizacji</b> pacjentów z powodu ZMO
