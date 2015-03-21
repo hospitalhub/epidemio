@@ -33,13 +33,5 @@
 	"repositories" : [{
 			"type" : "composer",
 			"url" : "http://wpackagist.org"
-		}, {
-			"type" : "vcs",
-			"url" : "https://github.com/amarcinkowski/hospitalplugin"
-		}
-	],
-	"scripts" : {
-		"test" : "phpunit",
-		"db" : "vendor/bin/doctrine orm:schema-tool:update --force --dump-sql"
-	}
+		}]
 }
