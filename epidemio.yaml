@@ -61,4 +61,4 @@ scripts:
   - bootstrap-table-export.min.js
   - tableExport.js
   - jquery.base64.js
-  
+    
