@@ -35,7 +35,7 @@
 			"url" : "http://wpackagist.org"
 		}, {
 			"type" : "vcs",
-			"url" : "https://wsz.git.cloudforge.com/hospitalplugin.git"
+			"url" : "https://github.com/amarcinkowski/hospitalplugin"
 		}
 	],
 	"scripts" : {
