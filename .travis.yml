@@ -4,6 +4,7 @@ php:
 before_script:
   mysql -e "create database IF NOT EXISTS wordpress;" -uroot
   composer install
+  composer db
 notifications:
   email:
     - andrzej.max.marcinkowski@gmail.com
