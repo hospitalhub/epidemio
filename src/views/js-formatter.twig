@@ -1,0 +1,12 @@
+<script> 
+	function valueFormatter(value) {
+        // 16777215 == ffffff in decimal
+        var color = value > 0 ? 'black' : 'grey';
+        var font = value > 0 ? 'font-weight:900' : 'font-weight:100';
+        var border = value > 0 ? 'border-bottom:' + 2 + 'px solid red;' : '';
+        var border2 = value > 20 ? 'padding-left:2px;border-left:' + value/10 + 'px solid red;' : '';
+        return '<div  style="color: ' + color + ';' + border + border2 + font + ';">' +
+                value +
+                '</div>';
+	}
+</script>

@@ -30,62 +30,65 @@ jQuery(document).ready(function($) {
 		minViewMode : 1
 	});
 
-	var $table = $('#table-transform');
-	var $params = {
-		formatSearch : function() {
-			return "szukaj"
-		},
-		formatToggle : function() {
-			return "widok kart"
-		},
-		formatColumns : function() {
-			return "kolumny"
-		},
-		formatNoMatches : function() {
-			return "brak wyników"
-		},
-	};
-	$table.bootstrapTable($params);
-	$(".saveVeryfication").on('click', function() {
-		var id = $(this).attr('name');
-		$("#weryfikacja" + id).css("background-color", "#FF0");
-		var data = {
-			'action' : 'infections_verification_action',
-			'data' : readForm(id)
+	if (typeof data !== 'undefined') {
+		var $table = $('#table-transform');
+		var $params = {
+			'data' : data,
+			formatSearch : function() {
+				return "szukaj"
+			},
+			formatToggle : function() {
+				return "widok kart"
+			},
+			formatColumns : function() {
+				return "kolumny"
+			},
+			formatNoMatches : function() {
+				return "brak wyników"
+			},
 		};
-		postData(data);
-	});
+		$table.bootstrapTable($params);
+		$(".saveVeryfication").on('click', function() {
+			var id = $(this).attr('name');
+			$("#weryfikacja" + id).css("background-color", "#FF0");
+			var data = {
+				'action' : 'infections_verification_action',
+				'data' : readForm(id)
+			};
+			postData(data);
+		});
 
-	function readForm(id) {
-		var infectionVeryfication = {};
-		infectionVeryfication['id'] = id;
-		var value = $('#weryfikacja' + id).attr('value');
-		infectionVeryfication['value'] = value;
-		var resultString = JSON.stringify(infectionVeryfication);
-		console.log('INFECTIONS: ' + resultString);
-		return resultString;
-	}
-
-	function postData(data) {
-		try {
-			// implementations
-			jQuery.post('admin-ajax.php', data, function(response) {
-				try {
-					var message = stripTags(response);
-					console.log('RESPONSE ID: ' + message);
-					var id = "#weryfikacja" + message.replace("\n", "");
-					$(id).css("background-color", "#3C3");
-				} catch (err) {
-					console.log("ERR: " + err);
-				}
-			});
-		} catch (err) {
-			console.log("ERR: " + err);
+		function readForm(id) {
+			var infectionVeryfication = {};
+			infectionVeryfication['id'] = id;
+			var value = $('#weryfikacja' + id).attr('value');
+			infectionVeryfication['value'] = value;
+			var resultString = JSON.stringify(infectionVeryfication);
+			console.log('INFECTIONS: ' + resultString);
+			return resultString;
 		}
-	}
 
-	function stripTags(text) {
-		return $("<html>" + text + "</html>").text();
-	}
+		function postData(data) {
+			try {
+				// implementations
+				jQuery.post('admin-ajax.php', data, function(response) {
+					try {
+						var message = stripTags(response);
+						console.log('RESPONSE ID: ' + message);
+						var id = "#weryfikacja" + message.replace("\n", "");
+						$(id).css("background-color", "#3C3");
+					} catch (err) {
+						console.log("ERR: " + err);
+					}
+				});
+			} catch (err) {
+				console.log("ERR: " + err);
+			}
+		}
 
+		function stripTags(text) {
+			return $("<html>" + text + "</html>").text();
+		}
+		
+	}
 });
