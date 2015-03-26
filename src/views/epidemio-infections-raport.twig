@@ -2,57 +2,56 @@
 {% include 'table-top.twig' %}
 <thead>
 	<tr style="font-size: 80%;">
-		<th>Data raportu</th>
-		<th>Data przesłania</th>
-		<th>Oddział (Użytkownik)</th>
-		<th>G</th>
-		<th>A</th>
-		<th>B</th>
-		<th>Bzak</th>
-		<th>ZMO</th>
-		<th>ZUM</th>
-		<th>PNEU-VAP</th>
-		<th>ZODC</th>
-		<th>ZKR</th>
-		<th>ROZ-III</th>
-		<th>ROZ-II</th>
-		<th>OIOM</th>
-		<th>BM</th>
-		<th>IZOL</th>
-		<th>ZAK</th>
-		<th>Uwagi</th>
-		<th>Analiza, Konsultacja, Weryfikacja</th>
+		<th data-field="dr" >Data raportu</th>
+		<th data-field="dp" >Data przesłania</th>
+		<th data-field="o" >Oddział (Użytkownik)</th>
+		<th data-field="g" data-formatter="valueFormatter">G</th>
+		<th data-field="a" data-formatter="valueFormatter">A</th>
+		<th data-field="b" data-formatter="valueFormatter">B</th>
+		<th data-field="bz" data-formatter="valueFormatter">Bzak</th>
+		<th data-field="zmo" data-formatter="valueFormatter">ZMO</th>
+		<th data-field="zum" data-formatter="valueFormatter">ZUM</th>
+		<th data-field="pneuvap" data-formatter="valueFormatter">PNEU-VAP</th>
+		<th data-field="zodc" data-formatter="valueFormatter">ZODC</th>
+		<th data-field="zkr" data-formatter="valueFormatter">ZKR</th>
+		<th data-field="roz3" data-formatter="valueFormatter">ROZ-III</th>
+		<th data-field="roz2" data-formatter="valueFormatter">ROZ-II</th>
+		<th data-field="oiom" data-formatter="valueFormatter">OIOM</th>
+		<th data-field="bm" data-formatter="valueFormatter">BM</th>
+		<th data-field="izol" data-formatter="valueFormatter">IZOL</th>
+		<th data-field="zak" data-formatter="valueFormatter">ZAK</th>
+		<th data-field="u" >Uwagi</th>
+		<th data-field="awk" >Analiza, Konsultacja, Weryfikacja</th>
 	</tr>
 </thead>
-<tbody>
-	{% for infection in infections %}
-	<tr>
-		<td>{{ infection.dataRaportu|date('Y-m-d') }}</td> {% include
-		'date-diff.twig' %}
-		<td>{{ infection.ward.name }} <span class="uwagi infection0">{{
-				infection.user.name }}</span>
-		</td>
-		<!-- columns --!>
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.G} %}
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.A} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.B} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.Bzak} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZMO} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZUM} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.PNEUVAP} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZODC} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZKR} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ROZIII} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ROZII} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.OIOM} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.BM} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.IZOL} %} 
-			{% include 'epidemio-raport-cell.twig' with {'value' : infection.ZAK} %}
-			<td>{{ infection.Uwagi }}</td>
-			<td>
-			<textarea id="weryfikacja{{ infection.id }}" rows="1" cols="30" maxlength="1000">{{ infection.Weryfikacja }}</textarea><br/>
-			<button type="submit" class="saveVeryfication" name="{{ infection.id }}">Zapisz</button></td>
-		</tr>
-		{% endfor %}
-	</tbody>
 </table>
+{% include 'js-formatter.twig' %}
+<script> 
+var data = [
+	{% for infection in infections %}
+		{
+			"dr": "{{ infection.dataRaportu|date('Y-m-d') }}",
+			"dp" : "<small style=color:gray;>{% include 'date-diff.twig' %}</small>",
+			"o" : "{{ infection.ward.name }} <small style=color:gray;>{{infection.user.name }}</small>",
+			"g": {{ infection.G}},
+			"a": {{ infection.A}},
+			"b": {{ infection.B}},
+			"bz": {{ infection.Bzak}},
+			"zmo":{{ infection.ZMO}},
+			"zum":{{ infection.ZUM}},
+			"pneuvap":{{ infection.PNEUVAP}},
+			"zodc":{{ infection.ZODC}}, 
+			"zkr":{{ infection.ZKR}}, 
+			"roz3":{{ infection.ROZIII}}, 
+			"roz2":{{ infection.ROZII}}, 
+			"oiom":{{ infection.OIOM}}, 
+			"bm":{{ infection.BM}}, 
+			"izol":{{ infection.IZOL}}, 
+			"zak":{{ infection.ZAK}},
+			"u": "{{ infection.Uwagi|e('js') }}",
+			"awk": "<textarea id=weryfikacja{{ infection.id }} rows=1 cols=30 maxlength=1000>{{ infection.Weryfikacja|e }}</textarea><br/><button type=submit class=saveVeryfication name={{ infection.id }}>Zapisz</button>"
+		},
+		{% endfor %}
+		]
+</script>
+    
