@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 		language : "pl",
 		"autoclose" : true,
 		"todayHighlight" : true,
-		startDate : new Date(2014, 0, 1),
+		startDate : new Date(2014, 11, 1),
 		endDate : nowPlus
 	});
 	$('.datepicker').datepicker('update', new Date());
@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 		"autoclose" : true,
 		"todayHighlight" : true,
 		minViewMode : 1,
-		startDate : new Date(2014, 0, 1),
+		startDate : new Date(2014, 11, 1),
 		endDate : nowPlus
 	});
 	$('.datepicker-month').datepicker('update', new Date());
