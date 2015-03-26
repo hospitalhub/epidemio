@@ -4,21 +4,35 @@ use Doctrine\DBAL\Types\VarDateTimeType;
 use Hospitalplugin\Entities\WardCRUD;
 use Hospitalplugin\DB\DoctrineBootstrap;
 use Epidemio\WP\PLTwig;
-use Epidemio\utils\PostVarsLoader;
 use Epidemio\Entities\InfectionsMonthlyCRUD;
 
 try {
+
+	// todo move to utils
+	function firstDayOfTheMonthDate($date) {
+		return new \DateTime ( $date . '-01' );
+	}
 	
-	$p = new PostVarsLoader ();
-	$p->load ();
+	$wardId = (! empty ( $_POST ['wardId'] ) ? $_POST ['wardId'] : 0);
 	
-	$infections = InfectionsMonthlyCRUD::getInfections ( $p->get ['fromStr'], $p->get ['toStr'], $p->get ['wardId'] );
+	$defaultMonth = (new \DateTime ())->format ( "Y-m" );
+	$dateFrom = (! empty ( $_POST ['dateFrom'] ) ? $_POST ['dateFrom'] : $defaultMonth);
+	$dateTo = (! empty ( $_POST ['dateTo'] ) ? $_POST ['dateTo'] : $defaultMonth);
+	
+	$fromMonth = firstDayOfTheMonthDate ( $dateFrom );
+	$toMonth = firstDayOfTheMonthDate ( $dateTo );
+	
+	$fromStr = $fromMonth->format ( 'Y-m-01' );
+	$toStr = $toMonth->format ( 'Y-m-t' );
+	
+	$infections = InfectionsMonthlyCRUD::getInfections ( $fromStr , $toStr, $wardId );
 	
 	echo PLTwig::load ()->render ( 'epidemio-infections-monthly-raport.twig', array (
 			'infections' => $infections,
 			'wards' => WardCRUD::getWardsArray (),
-			'wardId' => $p->get ['wardId'],
-			'date' => $p->get ['date'] 
+			'wardId' => $wardId,
+			'dateFrom' => $fromStr, 
+			'dateTo' => $toStr
 	) );
 } catch ( Exception $e ) {
 	echo "ERR: " . $e;
