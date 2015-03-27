@@ -28,7 +28,7 @@ use Hospitalplugin\DB\DoctrineBootstrap;
 use Hospitalplugin\utils\Utils;
 use Hospitalplugin\Twig\EscapePLCharsExtension;
 use Hospitalplugin\Entities\WardCRUD;
-use Epidemio\WP\PLTwig;
+use Hospitalplugin\Twig\PLTwig;
 
 class HospitalForm {
 	
@@ -49,7 +49,7 @@ class HospitalForm {
 				$em->flush ();
 			} else {
 				$object = \Epidemio\utils\YAML2Object::getObject ( $yaml );
-				echo PLTwig::load()->render ( 'form.twig', array (
+				echo PLTwig::load(__DIR__ . '/../views/')->render ( 'form.twig', array (
 						'infections' => $object 
 				) );
 			}

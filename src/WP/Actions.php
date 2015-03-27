@@ -25,6 +25,7 @@ namespace Epidemio\WP;
 
 use Hospitalplugin\DB\DoctrineBootstrap;
 use Epidemio\Entities\Infections;
+use Epidemio\Entities\InfectionsCRUD;
 /**
  * Actions
  *
@@ -66,13 +67,7 @@ class Actions
         $tempData = stripslashes($data);
         $obj = json_decode($tempData);
         try {
-        	$id = $obj->id;
-        	$em = DoctrineBootstrap::getEntityManager();
-        	$infection = $em->getRepository('Epidemio\Entities\Infections')->find($id);
-        	$infection->setWeryfikacja($obj->value);
-        	$em->persist($infection);
-        	$em->flush();
-        	echo $id;
+        	InfectionsCRUD::obj2DB($obj);
         } catch (Exception $e) {
             // FIXME Logger
             echo "zonk";

@@ -1,30 +1,32 @@
-{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId, 'dateFrom' : dateFrom, 'dateTo': dateTo, 'filters_form_action' : 'admin.php?page=zakazenia_monthly_raport'} %}
-{% include 'table-top.twig' %}
+{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId,
+'dateFrom' : dateFrom, 'dateTo': dateTo, 'filters_form_action' :
+'admin.php?page=zakazenia_monthly_raport'} %} {% include
+'table-top.twig' %}
 
 <thead>
 	<tr>
-			<th data-field="m" >		Miesiąc	</th>	
-			<th data-field="d" >		Data przesłania	</th>	
-			<th data-field="o" >		Oddział	</th>	
-			<th data-field="lkzmo" data-formatter="valueFormatter">	LKZMO	</th>	
-			<th data-field="zmo1" data-formatter="valueFormatter">	ZMO1	</th>	
-			<th data-field="zmo2" data-formatter="valueFormatter">	ZMO2	</th>	
-			<th data-field="zmo3" data-formatter="valueFormatter">	ZMO3	</th>	
-			<th data-field="zmo4" data-formatter="valueFormatter">	ZMO4	</th>	
-			<th data-field="bm" data-formatter="valueFormatter">	BM	</th>	
-			<th data-field="ph" data-formatter="valueFormatter">	PH	</th>	
+		<th data-field="m">Miesiąc</th>
+		<th data-field="d">Data przesłania</th>
+		<th data-field="o">Oddział</th>
+		<th data-field="lkzmo" data-formatter="valueFormatter">LKZMO</th>
+		<th data-field="zmo1" data-formatter="valueFormatter">ZMO1</th>
+		<th data-field="zmo2" data-formatter="valueFormatter">ZMO2</th>
+		<th data-field="zmo3" data-formatter="valueFormatter">ZMO3</th>
+		<th data-field="zmo4" data-formatter="valueFormatter">ZMO4</th>
+		<th data-field="bm" data-formatter="valueFormatter">BM</th>
+		<th data-field="ph" data-formatter="valueFormatter">PH</th>
 	</tr>
 </thead>
 </table>
 
-{% include 'js-formatter.twig' %} 
+{% include 'js-formatter.twig' %}
 <script> 
 var data = [
 {% for infection in infections %}
 	{
 		"m" : "{{ infection.dataRaportu|date('Y-m') }}",
 		"d" : "{% include 'date-diff.twig' %}",  
-		"o" : "{{ infection.ward.name }} <small style='color:grey;'>{{infection.user.name }} </small>",
+		"o" : "{{ infection.ward.name }} <small style='color:grey;'>{{ infection.user.name }} </small>",
 		"lkzmo": {{ infection.LKZMO }},
 		"zmo1":	{{  infection.ZMO1 }},
 		"zmo2":	{{  infection.ZMO2 }},

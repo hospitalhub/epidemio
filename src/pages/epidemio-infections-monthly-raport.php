@@ -3,7 +3,7 @@ use Epidemio\Entities\Infections;
 use Doctrine\DBAL\Types\VarDateTimeType;
 use Hospitalplugin\Entities\WardCRUD;
 use Hospitalplugin\DB\DoctrineBootstrap;
-use Epidemio\WP\PLTwig;
+use Hospitalplugin\Twig\PLTwig;
 use Epidemio\Entities\InfectionsMonthlyCRUD;
 
 try {
@@ -27,7 +27,7 @@ try {
 	
 	$infections = InfectionsMonthlyCRUD::getInfections ( $fromStr , $toStr, $wardId );
 	
-	echo PLTwig::load ()->render ( 'epidemio-infections-monthly-raport.twig', array (
+	echo PLTwig::load (__DIR__ . '/../views/')->render ( 'epidemio-infections-monthly-raport.twig', array (
 			'infections' => $infections,
 			'wards' => WardCRUD::getWardsArray (),
 			'wardId' => $wardId,

@@ -4,7 +4,7 @@ use Doctrine\DBAL\Types\VarDateTimeType;
 use Hospitalplugin\DB\DoctrineBootstrap;
 use Hospitalplugin\Entities\WardCRUD;
 use Epidemio\Entities\InfectionsCRUD;
-use Epidemio\WP\PLTwig;
+use Hospitalplugin\Twig\PLTwig;
 
 try {
 
@@ -20,7 +20,7 @@ try {
 	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId );
 	InfectionsCRUD::updateVerification ( $id, $weryfikacja );
 	
-	echo PLTwig::load ()->render ( 'epidemio-infections-raport.twig', array (
+	echo PLTwig::load (__DIR__ . '/../views/')->render ( 'epidemio-infections-raport.twig', array (
 			'infections' => $infections,
 			'wardId' => $wardId,
 			'wards' => WardCRUD::getWardsArray (),

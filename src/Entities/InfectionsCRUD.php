@@ -58,5 +58,14 @@ class InfectionsCRUD {
 			$em->flush ();
 		}
 	}
+	public static function obj2DB($obj) {
+		$id = $obj->id;
+		$em = DoctrineBootstrap::getEntityManager();
+		$infection = $em->getRepository('Epidemio\Entities\Infections')->find($id);
+		$infection->setWeryfikacja($obj->value);
+		$em->persist($infection);
+		$em->flush();
+		echo $id;
+	}
 }
 ?>

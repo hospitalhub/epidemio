@@ -1,10 +1,11 @@
-{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId, 'date' : date, 'filters_form_action' : 'admin.php?page=epidemio_raport'} %}
-{% include 'table-top.twig' %}
+{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId,
+'date' : date, 'filters_form_action' : 'admin.php?page=epidemio_raport'}
+%} {% include 'table-top.twig' %}
 <thead>
 	<tr style="font-size: 80%;">
-		<th data-field="dr" >Data raportu</th>
-		<th data-field="dp" >Data przesłania</th>
-		<th data-field="o" >Oddział (Użytkownik)</th>
+		<th data-field="dr">Data raportu</th>
+		<th data-field="dp">Data przesłania</th>
+		<th data-field="o">Oddział (Użytkownik)</th>
 		<th data-field="g" data-formatter="valueFormatter">G</th>
 		<th data-field="a" data-formatter="valueFormatter">A</th>
 		<th data-field="b" data-formatter="valueFormatter">B</th>
@@ -20,11 +21,12 @@
 		<th data-field="bm" data-formatter="valueFormatter">BM</th>
 		<th data-field="izol" data-formatter="valueFormatter">IZOL</th>
 		<th data-field="zak" data-formatter="valueFormatter">ZAK</th>
-		<th data-field="u" >Uwagi</th>
-		<th data-field="awk" >Analiza, Konsultacja, Weryfikacja</th>
+		<th data-field="u">Uwagi</th>
+		<th data-field="awk">Analiza, Konsultacja, Weryfikacja</th>
 	</tr>
 </thead>
 </table>
+
 {% include 'js-formatter.twig' %}
 <script> 
 var data = [
@@ -48,10 +50,9 @@ var data = [
 			"bm":{{ infection.BM}}, 
 			"izol":{{ infection.IZOL}}, 
 			"zak":{{ infection.ZAK}},
-			"u": "{{ infection.Uwagi|e('js') }}",
-			"awk": "<textarea id=weryfikacja{{ infection.id }} rows=1 cols=30 maxlength=1000>{{ infection.Weryfikacja|e }}</textarea><br/><button type=submit class=saveVeryfication name={{ infection.id }}>Zapisz</button>"
+			"u":  "{{ infection.Uwagi|e('html')|e('js') }}",
+			"awk": "<textarea id=weryfikacja{{ infection.id }} rows=1 cols=30 maxlength=1000>{{ infection.Weryfikacja|e('html')|e('js') }}</textarea><br/><button type=submit class=saveVeryfication name={{ infection.id }}>Zapisz</button>"
 		},
 		{% endfor %}
 		]
 </script>
-    
