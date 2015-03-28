@@ -11,21 +11,21 @@ menus:
     cap:        raport_zakazne
     link:       epidemiologia
     class:      Epidemio\WP\Menu
-    callback:   infectionsMenuCallback
+    callback:   formularz
 
   - title:      Raport Epidemiologiczny
     type:       submenu
     cap:        raport_zakazne
     link:       zakazenia
     class:      Epidemio\WP\Menu
-    callback:   infectionsMenuCallback
+    callback:   formularz
     
   - title:      ZMO Analiza miesięczna
     type:       submenu
     cap:        raport_zakazne
     link:       zakazenia_monthly
     class:      Epidemio\WP\Menu
-    callback:   infectionsMonthlyMenuCallback
+    callback:   formularz
     
         
   - title:      ZMO raport zbiorczy
@@ -33,14 +33,14 @@ menus:
     cap:        raporty_zakazne_zbiorczy
     link:       zakazenia_monthly_raport
     class:      Epidemio\WP\Menu
-    callback:   infectionsMonthlyRaportMenuCallback
+    callback:   raport
     
   - title:      RE Raport zbiorczy
     type:       submenu
     cap:        raporty_zakazne_zbiorczy
     link:       epidemio_raport
     class:      Epidemio\WP\Menu
-    callback:   infectionsRaportMenuCallback
+    callback:   raport
     
 menu-remove: 
   - url:       epidemiologia
@@ -59,6 +59,4 @@ scripts:
   - bootstrap-datepicker.pl.js
   - bootstrap-table.min.js
   - bootstrap-table-export.min.js
-  - tableExport.js
-  - jquery.base64.js
     

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Menu
  *
@@ -26,58 +27,28 @@ namespace Epidemio\WP;
 /**
  * Menu
  *
- * @category  Wp
- * @package   Punction
- * @author    Andrzej Marcinkowski <andrzej.max.marcinkowski@gmail.com>
+ * @category Wp
+ * @package Punction
+ * @author Andrzej Marcinkowski <andrzej.max.marcinkowski@gmail.com>
  * @copyright 2014 Wojewódzki Szpital Zespolony, Kalisz
- * @license   MIT http://opensource.org/licenses/MIT
- * @version   1.0 $Id$ $Format:%H$
- * @link      http://
- * @since     File available since Release 1.0.0
- *
+ * @license MIT http://opensource.org/licenses/MIT
+ * @version 1.0 $Id$ $Format:%H$
+ * @link http://
+ * @since File available since Release 1.0.0
+ *       
  */
-class Menu
-{
-
-    static function epidemiologiaMenuCallback()
-    {
-        if (! current_user_can('administrator')) {
-            wp_die(__('Nie masz uprawnień by oglądać tą stronę.'));
-        }
-        require_once __DIR__ . '/../pages/oddzial-migrate.php';
-    }
-
-    static function infectionsMenuCallback()
-    {
-    	if (! current_user_can('raport_zakazne')) {
-    		wp_die(__('Nie masz uprawnień by oglądać tę stronę.'));
-    	}
-    	require_once __DIR__ . '/../pages/epidemio-infections.php';
-    }
-
-    static function infectionsMonthlyMenuCallback()
-    {
-    	if (! current_user_can('raport_zakazne')) {
-    		wp_die(__('Nie masz uprawnień by oglądać tę stronę.'));
-    	}
-    	require_once __DIR__ . '/../pages/epidemio-infections-monthly.php';
-    }
-    
-
-    static function infectionsMonthlyRaportMenuCallback()
-    {
-    	if (! current_user_can('raporty_zakazne_zbiorczy')) {
-    		wp_die(__('Nie masz uprawnień by oglądać tę stronę.'));
-    	}
-    	require_once __DIR__ . '/../pages/epidemio-infections-monthly-raport.php';
-    }
-    
-    static function infectionsRaportMenuCallback()
-    {
-        if (! current_user_can('raporty_zakazne_zbiorczy')) {
-            wp_die(__('Nie masz uprawnień by oglądać tę stronę.'));
-        }
-        require_once __DIR__ . '/../pages/epidemio-infections-raport.php';
-    }
+class Menu {
+	static function formularz() {
+		if (! current_user_can ( 'raport_zakazne' )) {
+			wp_die ( __ ( 'Nie masz uprawnień by oglądać tę stronę.' ) );
+		}
+		require_once __DIR__ . '/../pages/' . current_filter () . '.php';
+	}
+	static function raport() {
+		if (! current_user_can ( 'raporty_zakazne_zbiorczy' )) {
+			wp_die ( __ ( 'Nie masz uprawnień by oglądać tę stronę.' ) );
+		}
+		require_once __DIR__ . '/../pages/' . current_filter () . '.php';
+	}
 }
 ?>

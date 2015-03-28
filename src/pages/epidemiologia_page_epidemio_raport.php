@@ -7,7 +7,7 @@ use Epidemio\Entities\InfectionsCRUD;
 use Hospitalplugin\Twig\PLTwig;
 
 try {
-
+	
 	$wardId = (! empty ( $_POST ['wardId'] ) ? $_POST ['wardId'] : 0);
 	$date = (! empty ( $_POST ['date'] ) ? $_POST ['date'] : (new \DateTime ())->format ( "Y-m" ));
 	$from = new \DateTime ( $date . '-01' );
@@ -20,7 +20,7 @@ try {
 	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId );
 	InfectionsCRUD::updateVerification ( $id, $weryfikacja );
 	
-	echo PLTwig::load (__DIR__ . '/../views/')->render ( 'epidemio-infections-raport.twig', array (
+	echo PLTwig::load ( __DIR__ . '/../views/' )->render ( current_filter () . '.twig', array (
 			'infections' => $infections,
 			'wardId' => $wardId,
 			'wards' => WardCRUD::getWardsArray (),

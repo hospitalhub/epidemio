@@ -14,18 +14,18 @@ use Epidemio\WP\Actions;
  * Domain Path: /languages
  */
 require_once WP_CONTENT_DIR . "/../vendor/autoload.php";
-if (! defined('PLUGIN_URL'))
-    define('PLUGIN_URL', WP_PLUGIN_URL . '/epidemio');
+if (! defined ( 'PLUGIN_URL' ))
+	define ( 'PLUGIN_URL', WP_PLUGIN_URL . '/epidemio' );
 
-$cfg = Yaml::parse(file_get_contents(__DIR__ . '/epidemio.yaml'));
+$cfg = Yaml::parse ( file_get_contents ( __DIR__ . '/epidemio.yaml' ) );
 
-$menuPnct = new Menu();
-$hsac = new ScriptsAndStyles();
-$psac = new ScriptsAndStyles();
+$menuPnct = new Menu ();
+$hsac = new ScriptsAndStyles ();
+$psac = new ScriptsAndStyles ();
 
-Actions::init();
+Actions::init ();
 
-$menuPnct->init($cfg['menus'], $cfg['url'], $cfg['menu-remove']);
-$hsac->init(HOSPITAL_PLUGIN_URL, $cfg['pages'], $cfg['scripts'], $cfg['styles']);
-$psac->init(WP_PLUGIN_URL . '/epidemio', $cfg['pages'], $cfg['plugin-scripts'], $cfg['plugin-styles']);
+$menuPnct->init ( $cfg ['menus'], $cfg ['url'], $cfg ['menu-remove'] );
+$hsac->init ( HOSPITAL_PLUGIN_URL, $cfg ['pages'], $cfg ['scripts'], $cfg ['styles'] );
+$psac->init ( PLUGIN_URL, $cfg ['pages'], $cfg ['plugin-scripts'], $cfg ['plugin-styles'] );
 ?>

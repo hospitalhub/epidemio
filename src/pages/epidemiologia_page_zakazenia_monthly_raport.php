@@ -7,7 +7,7 @@ use Hospitalplugin\Twig\PLTwig;
 use Epidemio\Entities\InfectionsMonthlyCRUD;
 
 try {
-
+	
 	// todo move to utils
 	function firstDayOfTheMonthDate($date) {
 		return new \DateTime ( $date . '-01' );
@@ -25,14 +25,14 @@ try {
 	$fromStr = $fromMonth->format ( 'Y-m-01' );
 	$toStr = $toMonth->format ( 'Y-m-t' );
 	
-	$infections = InfectionsMonthlyCRUD::getInfections ( $fromStr , $toStr, $wardId );
+	$infections = InfectionsMonthlyCRUD::getInfections ( $fromStr, $toStr, $wardId );
 	
-	echo PLTwig::load (__DIR__ . '/../views/')->render ( 'epidemio-infections-monthly-raport.twig', array (
+	echo PLTwig::load ( __DIR__ . '/../views/' )->render ( current_filter () . '.twig', array (
 			'infections' => $infections,
 			'wards' => WardCRUD::getWardsArray (),
 			'wardId' => $wardId,
-			'dateFrom' => $fromStr, 
-			'dateTo' => $toStr
+			'dateFrom' => $fromStr,
+			'dateTo' => $toStr 
 	) );
 } catch ( Exception $e ) {
 	echo "ERR: " . $e;
