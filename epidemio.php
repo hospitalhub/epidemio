@@ -17,7 +17,7 @@ require_once WP_CONTENT_DIR . "/../vendor/autoload.php";
 if (! defined ( 'PLUGIN_URL' ))
 	define ( 'PLUGIN_URL', WP_PLUGIN_URL . '/epidemio' );
 
-$cfg = Yaml::parse ( file_get_contents ( __DIR__ . '/epidemio.yaml' ) );
+$cfg = Yaml::parse ( file_get_contents ( __DIR__ . '/epidemio.yml' ) );
 
 $menuPnct = new Menu ();
 $hsac = new ScriptsAndStyles ();
