@@ -3,6 +3,8 @@ url:  &url
 pages:
   - epidemiologia_page_zakazenia
   - epidemiologia_page_zakazenia_zmo
+  - epidemiologia_page_zakazenia_zum
+  - epidemiologia_page_zakazenia_zodc
   - epidemiologia_page_zakazenia_zmo_raport
   - epidemiologia_page_epidemio_raport
 menus:
@@ -24,6 +26,20 @@ menus:
     type:       submenu
     cap:        raport_zakazne
     link:       zakazenia_zmo
+    class:      Epidemio\WP\Menu
+    callback:   formularz
+        
+  - title:      ZUM Analiza miesięczna
+    type:       submenu
+    cap:        raport_zakazne
+    link:       zakazenia_zum
+    class:      Epidemio\WP\Menu
+    callback:   formularz
+
+  - title:      ZODC Analiza miesięczna
+    type:       submenu
+    cap:        raport_zakazne
+    link:       zakazenia_zodc
     class:      Epidemio\WP\Menu
     callback:   formularz
         

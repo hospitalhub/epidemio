@@ -44,37 +44,7 @@ namespace Epidemio\Entities;
  *        @index(name="oddzialId_idx", columns={"oddzialId"}),
  *        @index(name="userId_idx", columns={"userId"})})
  */
-class Infections {
-	
-	/**
-	 * id
-	 * @Id @Column(type="integer") @GeneratedValue
-	 */
-	public $id;
-	
-	/**
-	 * $dataRaportu datetime
-	 * @Column(type="datetime") *
-	 */
-	public $dataRaportu;
-	
-	/**
-	 * $dataPrzeslania datetime
-	 * @Column(type="datetime") *
-	 */
-	public $dataPrzeslania;
-	
-	/**
-	 * @ManyToOne(targetEntity="Hospitalplugin\Entities\Ward")
-	 * @JoinColumn(name="oddzialId", referencedColumnName="id")
-	 */
-	protected $ward;
-	
-	/**
-	 * @ManyToOne(targetEntity="Hospitalplugin\Entities\User")
-	 * @JoinColumn(name="userId", referencedColumnName="id")
-	 */
-	protected $user;
+class Infections extends InfectionRaport {
 	
 	/**
 	 * @Column(columnDefinition="SMALLINT NOT NULL DEFAULT 0") *
@@ -160,65 +130,6 @@ class Infections {
 	 * @Column(type="string", length=1000)
 	 */
 	public $Weryfikacja = "";
-	
-	function __construct($args) {
-		foreach ( $args as $key => $value ) {
-			if ($key == 'dataRaportu') {
-				$value = new \DateTime ( $value );
-			} 
-			call_user_func ( array (
-					$this,
-					'set' . $key 
-			), $value );
-		}
-		$this->dataPrzeslania = new \DateTime ();
-		echo '<h3><div class="alert alert-primary">Dziękuję za przesłanie raportu!</div></h3>';
-	}
-	
-	/**
-	 * getId
-	 *
-	 * @return id
-	 */
-	public function getId() {
-		return $this->id;
-	}
-	
-	/**
-	 * sets id
-	 *
-	 * @param int $id
-	 *        	ID
-	 *        	
-	 * @return \Punction\Entities\Patient
-	 */
-	public function setId($id) {
-		$this->id = $id;
-		return $this;
-	}
-	
-	/**
-	 * toString
-	 *
-	 * @return string
-	 */
-	public function toString() {
-		$txt = $this->getId ();
-		$data = $this->getDataRaportu ();
-		if ($data instanceof \DateTime) {
-			$txt .= $this->getDataRaportu ()->format ( "Y-m-d" );
-		} else {
-			$txt .= $this->getDataRaportu ();
-		}
-		return $txt;
-	}
-	public function getDataRaportu() {
-		return $this->dataRaportu;
-	}
-	public function setDataRaportu($dataRaportu) {
-		$this->dataRaportu = $dataRaportu;
-		return $this;
-	}
 	
 	public function getG() {
 		return $this->G;
@@ -330,27 +241,6 @@ class Infections {
 	}
 	public function setUwagi($Uwagi) {
 		$this->Uwagi = $Uwagi;
-		return $this;
-	}
-	public function getDataPrzeslania() {
-		return $this->dataPrzeslania;
-	}
-	public function setDataPrzeslania($dataPrzeslania) {
-		$this->dataPrzeslania = $dataPrzeslania;
-		return $this;
-	}
-	public function getWard() {
-		return $this->ward;
-	}
-	public function setWard($ward) {
-		$this->ward = $ward;
-		return $this;
-	}
-	public function getUser() {
-		return $this->user;
-	}
-	public function setUser($user) {
-		$this->user = $user;
 		return $this;
 	}
 	public function getWeryfikacja() {

@@ -37,97 +37,103 @@ namespace Epidemio\Entities;
  * @since File available since Release 1.0.0
  *       
  *        @Entity
- *        @Table(name="epidemio_infections_monthly",
+ *        @Table(name="epidemio_infections_zodc",
  *        options={"collate"="utf8_polish_ci", "charset"="utf8", "engine"="MyISAM"},
  *        indexes={
  *        @index(name="dataRaportu_idx", columns={"dataRaportu"}),
  *        @index(name="oddzialId_idx", columns={"oddzialId"}),
  *        @index(name="userId_idx", columns={"userId"})})
  */
-class InfectionsZMO extends InfectionRaport{
+class InfectionsZODC extends InfectionRaport {
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $LKZMO;
+	public $LDN;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO1;
+	public $LDK;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO2;
+	public $PDOŻ;
+
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $PDCŻ;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO3;
+	public $PDCD;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO4;
+	public $PDT;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
 	public $BM;
 	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $PH;
+	public function getLDN() {
+		return $this->LDN;
+	}
+	public function setLDN($LDN) {
+		$this->LDN = $LDN;
+		return $this;
+	}
+	
+	public function getLDK() {
+		return $this->LDK;
+	}
+	public function setLDK($LDK) {
+		$this->LDK = $LDK;
+		return $this;
+	}
+	
+	public function getPDOŻ() {
+		return $this->PDOŻ;
+	}
+	public function setPDOŻ($PDOŻ) {
+		$this->PDOŻ = $PDOŻ;
+		return $this;
+	}
+	
+	public function getPDCŻ() {
+		return $this->PDCŻ;
+	}
+	public function setPDCŻ($PDCŻ) {
+		$this->PDCŻ = $PDCŻ;
+		return $this;
+	}
 
-	public function getLKZMO() {
-		return $this->LKZMO;
+	public function getPDCD() {
+		return $this->PDCD;
 	}
-	public function setLKZMO($LKZMO) {
-		$this->LKZMO = $LKZMO;
+	public function setPDCD($PDCD) {
+		$this->PDCD = $PDCD;
 		return $this;
 	}
-	public function getZMO1() {
-		return $this->ZMO1;
+	
+	public function getPDT() {
+		return $this->PDT;
 	}
-	public function setZMO1($ZMO1) {
-		$this->ZMO1 = $ZMO1;
+	public function setPDT($PDT) {
+		$this->PDT = $PDT;
 		return $this;
 	}
-	public function getZMO2() {
-		return $this->ZMO2;
-	}
-	public function setZMO2($ZMO2) {
-		$this->ZMO2 = $ZMO2;
-		return $this;
-	}
-	public function getZMO3() {
-		return $this->ZMO3;
-	}
-	public function setZMO3($ZMO3) {
-		$this->ZMO3 = $ZMO3;
-		return $this;
-	}
-	public function getZMO4() {
-		return $this->ZMO4;
-	}
-	public function setZMO4($ZMO4) {
-		$this->ZMO4 = $ZMO4;
-		return $this;
-	}
+	
 	public function getBM() {
 		return $this->BM;
 	}
 	public function setBM($BM) {
 		$this->BM = $BM;
-		return $this;
-	}
-	public function getPH() {
-		return $this->PH;
-	}
-	public function setPH($PH) {
-		$this->PH = $PH;
 		return $this;
 	}
 	

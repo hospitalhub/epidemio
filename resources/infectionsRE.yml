@@ -1,5 +1,6 @@
 !1 : RAPORT EPIDEMIOLOGICZNY O PACJENTACH
-%Data : <input type="text" class="datepicker" name="dataRaportu" style="width: 100px;" />
+%Data : >
+  <input type="text" class="datepicker" name="dataRaportu" style="width: 100px;" />
 !2 : Objawy zakażenia szpitalnego
 G :  <b> GORĄCZKA ≥ 38 C</b> w trakcie hospitalizacji po 72 godzinach od przyjęcia do szpitala,
 A :  <b> ANTYBIOTYKOTERAPIA</b> po 72 godzinach od przyjęcia do szpitala,

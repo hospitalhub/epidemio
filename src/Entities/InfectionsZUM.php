@@ -37,85 +37,59 @@ namespace Epidemio\Entities;
  * @since File available since Release 1.0.0
  *       
  *        @Entity
- *        @Table(name="epidemio_infections_monthly",
+ *        @Table(name="epidemio_infections_zum",
  *        options={"collate"="utf8_polish_ci", "charset"="utf8", "engine"="MyISAM"},
  *        indexes={
  *        @index(name="dataRaportu_idx", columns={"dataRaportu"}),
  *        @index(name="oddzialId_idx", columns={"oddzialId"}),
  *        @index(name="userId_idx", columns={"userId"})})
  */
-class InfectionsZMO extends InfectionRaport{
+class InfectionsZUM extends InfectionRaport {
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $LKZMO;
+	public $LPKZUM;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO1;
+	public $LPZUM1;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $ZMO2;
-	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $ZMO3;
-	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $ZMO4;
+	public $LPZUM2;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
 	public $BM;
 	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $PH;
-
-	public function getLKZMO() {
-		return $this->LKZMO;
+	public function getLPKZUM() {
+		return $this->LPKZUM;
 	}
-	public function setLKZMO($LKZMO) {
-		$this->LKZMO = $LKZMO;
+	public function setLPKZUM($LPKZUM) {
+		$this->LPKZUM = $LPKZUM;
 		return $this;
 	}
-	public function getZMO1() {
-		return $this->ZMO1;
+	
+	public function getLPZUM1() {
+		return $this->LPZUM1;
 	}
-	public function setZMO1($ZMO1) {
-		$this->ZMO1 = $ZMO1;
+	public function setLPZUM1($LPZUM1) {
+		$this->LPZUM1 = $LPZUM1;
 		return $this;
 	}
-	public function getZMO2() {
-		return $this->ZMO2;
+	
+	public function getLPZUM2() {
+		return $this->LPZUM2;
 	}
-	public function setZMO2($ZMO2) {
-		$this->ZMO2 = $ZMO2;
+	public function setLPZUM2($LPZUM2) {
+		$this->LPZUM2 = $LPZUM2;
 		return $this;
 	}
-	public function getZMO3() {
-		return $this->ZMO3;
-	}
-	public function setZMO3($ZMO3) {
-		$this->ZMO3 = $ZMO3;
-		return $this;
-	}
-	public function getZMO4() {
-		return $this->ZMO4;
-	}
-	public function setZMO4($ZMO4) {
-		$this->ZMO4 = $ZMO4;
-		return $this;
-	}
+	
 	public function getBM() {
 		return $this->BM;
 	}
@@ -123,13 +97,8 @@ class InfectionsZMO extends InfectionRaport{
 		$this->BM = $BM;
 		return $this;
 	}
-	public function getPH() {
-		return $this->PH;
-	}
-	public function setPH($PH) {
-		$this->PH = $PH;
-		return $this;
-	}
+	
+	
 	
 	
 }
