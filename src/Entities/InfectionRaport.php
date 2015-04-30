@@ -80,7 +80,7 @@ class InfectionRaport {
 			), $value );
 		}
 		$this->dataPrzeslania = new \DateTime ();
-		echo '<h3><div class="alert alert-primary">Dziękuję za przesłanie raportu! INF RAP</div></h3>';
+		echo '<h3><div class="alert alert-primary">Dziękuję za przesłanie raportu!</div></h3>';
 	}
 	
 	/**

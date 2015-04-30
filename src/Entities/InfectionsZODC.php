@@ -59,12 +59,12 @@ class InfectionsZODC extends InfectionRaport {
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $PDOŻ;
+	public $PDOZ;
 
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $PDCŻ;
+	public $PDCZ;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
@@ -97,19 +97,19 @@ class InfectionsZODC extends InfectionRaport {
 		return $this;
 	}
 	
-	public function getPDOŻ() {
-		return $this->PDOŻ;
+	public function getPDOZ() {
+		return $this->PDOZ;
 	}
-	public function setPDOŻ($PDOŻ) {
-		$this->PDOŻ = $PDOŻ;
+	public function setPDOZ($PDOZ) {
+		$this->PDOZ = $PDOZ;
 		return $this;
 	}
 	
-	public function getPDCŻ() {
-		return $this->PDCŻ;
+	public function getPDCZ() {
+		return $this->PDCZ;
 	}
-	public function setPDCŻ($PDCŻ) {
-		$this->PDCŻ = $PDCŻ;
+	public function setPDCZ($PDCZ) {
+		$this->PDCZ = $PDCZ;
 		return $this;
 	}
 

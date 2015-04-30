@@ -3,8 +3,8 @@
 !2 : 
 LDN: liczba wykonanych <b>dostępów naczyniowych</b> 
 LDK: liczba wykonanych <b>dobokaniulacji</b>
-PDOŻ: liczba powikłań w dostępach naczyniowych <b>obwodowych żylnych</b>
-PDCŻ: liczba powikłań w dostępach naczyniowych <b>centralnych żylnych</b>
+PDOZ: liczba powikłań w dostępach naczyniowych <b>obwodowych żylnych</b>
+PDCZ: liczba powikłań w dostępach naczyniowych <b>centralnych żylnych</b>
 PDCD: liczba powikłań w dostępach naczyniowych <b>dializacyjnych</b>
 PDT: liczba powikłań w dostępach naczyniowych <b>tętniczych</b>
 BM: liczba <b>badań mikrobiologicznych</b> pobranych z miejsca związanego z cewnikiem naczyniowym
