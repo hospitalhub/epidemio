@@ -44,7 +44,7 @@ namespace Epidemio\Entities;
  *        @index(name="oddzialId_idx", columns={"oddzialId"}),
  *        @index(name="userId_idx", columns={"userId"})})
  */
-class InfectionsMonthly {
+class InfectionsZMO {
 	
 	/**
 	 * id

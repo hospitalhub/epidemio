@@ -27,13 +27,13 @@ namespace Epidemio\Entities;
 use Hospitalplugin\DB\DoctrineBootstrap;
 use Hospitalplugin\utils\Utils;
 
-class InfectionsMonthlyCRUD {
+class InfectionsZMOCRUD {
 	public static function getInfections($from, $to, $wardId) {
 		$em = ( object ) DoctrineBootstrap::getEntityManager ();
 		$qb = $em->createQueryBuilder ();
 		
 		$qb->select ( 'i' )-> /* */
-		from ( 'Epidemio\Entities\InfectionsMonthly', 'i' )-> /* */
+		from ( 'Epidemio\Entities\InfectionsZMO', 'i' )-> /* */
 		addOrderBy ( 'i.dataRaportu', 'DESC' )-> /* */
 		addOrderBy ( 'i.dataPrzeslania ', 'DESC' ) /* */
         ->where ( /* */

@@ -4,7 +4,7 @@ use Doctrine\DBAL\Types\VarDateTimeType;
 use Hospitalplugin\Entities\WardCRUD;
 use Hospitalplugin\DB\DoctrineBootstrap;
 use Hospitalplugin\Twig\PLTwig;
-use Epidemio\Entities\InfectionsMonthlyCRUD;
+use Epidemio\Entities\InfectionsZMOCRUD;
 
 try {
 	
@@ -25,7 +25,7 @@ try {
 	$fromStr = $fromMonth->format ( 'Y-m-01' );
 	$toStr = $toMonth->format ( 'Y-m-t' );
 	
-	$infections = InfectionsMonthlyCRUD::getInfections ( $fromStr, $toStr, $wardId );
+	$infections = InfectionsZMOCRUD::getInfections ( $fromStr, $toStr, $wardId );
 	
 	echo PLTwig::load ( __DIR__ . '/../views/' )->render ( current_filter () . '.twig', array (
 			'infections' => $infections,
