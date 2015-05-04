@@ -54,6 +54,11 @@ class InfectionsZUM extends InfectionRaport {
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
+	public $LPZUM;
+	
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
 	public $LPZUM1;
 	
 	/**
@@ -71,6 +76,14 @@ class InfectionsZUM extends InfectionRaport {
 	}
 	public function setLPKZUM($LPKZUM) {
 		$this->LPKZUM = $LPKZUM;
+		return $this;
+	}
+	
+	public function getLPZUM() {
+		return $this->LPZUM;
+	}
+	public function setLPZUM($LPZUM) {
+		$this->LPZUM = $LPZUM;
 		return $this;
 	}
 	

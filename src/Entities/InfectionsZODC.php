@@ -49,51 +49,82 @@ class InfectionsZODC extends InfectionRaport {
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $LDN;
-	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $LDK;
-	
-	/**
-	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
-	 */
-	public $PDOZ;
+	public $LDZ;
 
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $PDCZ;
+	public $LDKZ;
+
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $PDOZ;
 	
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
-	public $PDCD;
-	
+	public $LDCZ;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $LDKCZ;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $PDCZ;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $LDD;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $LDKD;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $PDD;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $LDT;
+		
+	/**
+	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
+	 */
+	public $LDKT;
+		
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
 	public $PDT;
-	
+		
 	/**
 	 * @Column(columnDefinition="DECIMAL(4,0) NOT NULL DEFAULT 0") *
 	 */
 	public $BM;
 	
-	public function getLDN() {
-		return $this->LDN;
+	public function getLDZ() {
+		return $this->LDZ;
 	}
-	public function setLDN($LDN) {
-		$this->LDN = $LDN;
+	public function setLDZ($LDZ) {
+		$this->LDZ = $LDZ;
 		return $this;
 	}
 	
-	public function getLDK() {
-		return $this->LDK;
+	
+	public function getLDKZ() {
+		return $this->LDKZ;
 	}
-	public function setLDK($LDK) {
-		$this->LDK = $LDK;
+	public function setLDKZ($LDKZ) {
+		$this->LDKZ = $LDKZ;
 		return $this;
 	}
 	
@@ -105,6 +136,25 @@ class InfectionsZODC extends InfectionRaport {
 		return $this;
 	}
 	
+	
+	public function getLDCZ() {
+		return $this->LDCZ;
+	}
+	public function setLDCZ($LDCZ) {
+		$this->LDCZ = $LDCZ;
+		return $this;
+	}
+	
+	
+	public function getLDKCZ() {
+		return $this->LDKCZ;
+	}
+	public function setLDKCZ($LDKCZ) {
+		$this->LDKCZ = $LDKCZ;
+		return $this;
+	}
+	
+	
 	public function getPDCZ() {
 		return $this->PDCZ;
 	}
@@ -112,14 +162,52 @@ class InfectionsZODC extends InfectionRaport {
 		$this->PDCZ = $PDCZ;
 		return $this;
 	}
-
-	public function getPDCD() {
-		return $this->PDCD;
+	
+	
+	public function getLDD() {
+		return $this->LDD;
 	}
-	public function setPDCD($PDCD) {
-		$this->PDCD = $PDCD;
+	public function setLDD($LDD) {
+		$this->LDD = $LDD;
 		return $this;
 	}
+	
+	
+	public function getLDKD() {
+		return $this->LDKD;
+	}
+	public function setLDKD($LDKD) {
+		$this->LDKD = $LDKD;
+		return $this;
+	}
+	
+	
+	public function getPDD() {
+		return $this->PDD;
+	}
+	public function setPDD($PDD) {
+		$this->PDD = $PDD;
+		return $this;
+	}
+	
+	
+	public function getLDT() {
+		return $this->LDT;
+	}
+	public function setLDT($LDT) {
+		$this->LDT = $LDT;
+		return $this;
+	}
+	
+	
+	public function getLDKT() {
+		return $this->LDKT;
+	}
+	public function setLDKT($LDKT) {
+		$this->LDKT = $LDKT;
+		return $this;
+	}
+	
 	
 	public function getPDT() {
 		return $this->PDT;
@@ -135,7 +223,5 @@ class InfectionsZODC extends InfectionRaport {
 	public function setBM($BM) {
 		$this->BM = $BM;
 		return $this;
-	}
-	
-	
+	}	
 }

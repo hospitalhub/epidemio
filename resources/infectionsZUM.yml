@@ -2,6 +2,7 @@
 %Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
 !2 : 
 LPKZUM:  liczba pacjentów, u których <b>założono kartę</b> monitorowania cewnikowania pęcherza moczowego
-LPZUM1: liczba pacjentów z objawami ZUM, w tym liczba pacjentów z cewnikiem moczowym u których objawy wystąpiły <b>po pojedynczym, krótkim epizodzie cewnikowania</b>
-LPZUM2: liczba pacjentów z objawami ZUM, w tym liczba pacjentów z cewnikiem moczowym u których objawy wystąpiły <b>po założeniu cewnika moczowego do ciągłego drenażu pęcherza moczowego</b>
+LPZUM: liczba pacjentów z objawami ZUM
+LPZUM1: liczba pacjentów z ZUM z cewnikiem moczowym u których objawy wystąpiły <b>po pojedynczym, krótkim epizodzie cewnikowania</b>
+LPZUM2: liczba pacjentów z ZUM z cewnikiem moczowym u których objawy wystąpiły <b>po założeniu cewnika moczowego do ciągłego drenażu pęcherza moczowego</b>
 BM: ilość <b>badań mikrobiologicznych</b> moczu

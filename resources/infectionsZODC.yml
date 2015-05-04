@@ -1,10 +1,20 @@
 !1 : MIESIĘCZNA ANALIZA POWIKŁAŃ KANIULACJI NACZYŃ
 %Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
-!2 : 
-LDN: liczba wykonanych <b>dostępów naczyniowych</b> 
-LDK: liczba wykonanych <b>dobokaniulacji</b>
+!2 : Dostęp naczyniowy obwodowy żylny 
+LDZ: liczba wykonanych <b>dostępów naczyniowych</b> 
+LDKZ: liczba wykonanych <b>dobokaniulacji</b>
 PDOZ: liczba powikłań w dostępach naczyniowych <b>obwodowych żylnych</b>
+!3 : Dostęp naczyniowy centralny żylny
+LDCZ: liczba wykonanych <b>dostępów naczyniowych</b> 
+LDKCZ: liczba wykonanych <b>dobokaniulacji</b>
 PDCZ: liczba powikłań w dostępach naczyniowych <b>centralnych żylnych</b>
-PDCD: liczba powikłań w dostępach naczyniowych <b>dializacyjnych</b>
+!4 : Dostęp naczyniowy dializacyjny
+LDD: liczba wykonanych <b>dostępów naczyniowych</b> 
+LDKD: liczba wykonanych <b>dobokaniulacji</b>
+PDD: liczba powikłań w dostępach naczyniowych <b>dializacyjnych</b>
+!5 : Dostęp naczyniowy tętniczy 
+LDT: liczba wykonanych <b>dostępów naczyniowych</b> 
+LDKT: liczba wykonanych <b>dobokaniulacji</b>
 PDT: liczba powikłań w dostępach naczyniowych <b>tętniczych</b>
+!6 : 
 BM: liczba <b>badań mikrobiologicznych</b> pobranych z miejsca związanego z cewnikiem naczyniowym
