@@ -28,10 +28,10 @@ use Hospitalplugin\DB\DoctrineBootstrap;
 use Hospitalplugin\utils\Utils;
 
 class InfectionsCRUD {
-	public static function getInfections($from, $to, $wardId) {
+	public static function getInfections($from, $to, $wardId, $class) {
 		$em = ( object ) DoctrineBootstrap::getEntityManager ();
 		$qb = $em->createQueryBuilder ();
-		$qb->select ( 'i' )->from ( 'Epidemio\Entities\Infections', 'i' ) /* */
+		$qb->select ( 'i' )->from ( 'Epidemio\Entities\\' . $class, 'i' ) /* */
         ->addOrderBy ( 'i.dataRaportu', 'DESC' ) /* */
         ->addOrderBy ( 'i.dataPrzeslania ', 'DESC' ) /* */
         ->where ( /* */

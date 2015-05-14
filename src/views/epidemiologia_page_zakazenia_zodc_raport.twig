@@ -1,0 +1,52 @@
+{% include 'filters.twig' with {'wards' : wards, 'wardId' : wardId,
+'dateFrom' : dateFrom, 'dateTo': dateTo, 'filters_form_action' :
+'admin.php?page=zakazenia_zodc_raport'} %} {% include
+'table-top.twig' %}
+
+<thead>
+	<tr>
+		<th data-field="m">Miesiąc</th>
+		<th data-field="d">Data przesłania</th>
+		<th data-field="o">Oddział</th>
+		<th data-field="ldz" data-formatter="valueFormatter">LDZ</th>
+		<th data-field="ldkz" data-formatter="valueFormatter">LDKZ</th>
+		<th data-field="pdoz" data-formatter="valueFormatter">PDOZ</th>
+		<th data-field="ldcz" data-formatter="valueFormatter">LDCZ</th>
+		<th data-field="ldkcz" data-formatter="valueFormatter">LDKCZ</th>
+		<th data-field="pdcz" data-formatter="valueFormatter">PDCZ</th>
+		<th data-field="ldd" data-formatter="valueFormatter">LDD</th>
+		<th data-field="ldkd" data-formatter="valueFormatter">LDKD</th>
+		<th data-field="pdd" data-formatter="valueFormatter">PDD</th>
+		<th data-field="ldt" data-formatter="valueFormatter">LDT</th>
+		<th data-field="ldkt" data-formatter="valueFormatter">LDKT</th>
+		<th data-field="pdt" data-formatter="valueFormatter">PDT</th>
+		<th data-field="bm" data-formatter="valueFormatter">BM</th>
+	</tr>
+</thead>
+</table>
+
+{% include 'js-formatter.twig' %}
+<script> 
+var data = [
+{% for infection in infections %}
+	{
+		"m" : "{{ infection.dataRaportu|date('Y-m') }}",
+		"d" : "{% include 'date-diff.twig' %}",  
+		"o" : "{{ infection.ward.name }} <small style='color:grey;'>{{ infection.user.name }} </small>",
+		"ldz": {{ infection.LDZ }},
+		"ldkz": {{ infection.LDKZ }},
+		"pdoz": {{ infection.PDOZ }},
+		"ldcz": {{ infection.LDCZ }},
+		"ldkcz": {{ infection.LDKCZ }},
+		"pdcz": {{ infection.PDCZ }},
+		"ldd": {{ infection.LDD }},
+		"ldkd": {{ infection.LDKD }},
+		"pdd": {{ infection.PDD }},
+		"ldt": {{ infection.LDT }},
+		"ldkt": {{ infection.LDKT }},
+		"pdt": {{ infection.PDT }},
+		"bm":	{{  infection.BM }}
+	},
+{% endfor %}
+]
+</script>

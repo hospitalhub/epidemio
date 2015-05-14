@@ -6,6 +6,8 @@ pages:
   - epidemiologia_page_zakazenia_zum
   - epidemiologia_page_zakazenia_zodc
   - epidemiologia_page_zakazenia_zmo_raport
+  - epidemiologia_page_zakazenia_zum_raport
+  - epidemiologia_page_zakazenia_zodc_raport
   - epidemiologia_page_epidemio_raport
 menus:
   - title:      Epidemiologia
@@ -47,6 +49,20 @@ menus:
     type:       submenu
     cap:        raporty_zakazne_zbiorczy
     link:       zakazenia_zmo_raport
+    class:      Epidemio\WP\Menu
+    callback:   raport
+            
+  - title:      ZUM raport zbiorczy
+    type:       submenu
+    cap:        raporty_zakazne_zbiorczy
+    link:       zakazenia_zum_raport
+    class:      Epidemio\WP\Menu
+    callback:   raport
+    
+  - title:      ZODC raport zbiorczy
+    type:       submenu
+    cap:        raporty_zakazne_zbiorczy
+    link:       zakazenia_zodc_raport
     class:      Epidemio\WP\Menu
     callback:   raport
     

@@ -25,7 +25,7 @@ try {
 	$fromStr = $fromMonth->format ( 'Y-m-01' );
 	$toStr = $toMonth->format ( 'Y-m-t' );
 	
-	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId, 'InfectionsZMO' );
+	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId, 'InfectionsZUM' );
 	
 	echo PLTwig::load ( __DIR__ . '/../views/' )->render ( current_filter () . '.twig', array (
 			'infections' => $infections,

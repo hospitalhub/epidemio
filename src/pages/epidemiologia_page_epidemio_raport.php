@@ -17,7 +17,7 @@ try {
 	$id = (! empty ( $_POST ['id'] ) ? $_POST ['id'] : null);
 	$weryfikacja = (! empty ( $_POST ['weryfikacja'] ) ? $_POST ['weryfikacja'] : null);
 	
-	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId );
+	$infections = InfectionsCRUD::getInfections ( $fromStr, $toStr, $wardId, 'Infections' );
 	InfectionsCRUD::updateVerification ( $id, $weryfikacja );
 	
 	echo PLTwig::load ( __DIR__ . '/../views/' )->render ( current_filter () . '.twig', array (
