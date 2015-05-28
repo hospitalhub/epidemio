@@ -61,7 +61,7 @@ class InfectionRaport {
 	 * @ManyToOne(targetEntity="Hospitalplugin\Entities\Ward")
 	 * @JoinColumn(name="oddzialId", referencedColumnName="id")
 	 */
-	protected $ward;
+	public $ward;
 	
 	/**
 	 * @ManyToOne(targetEntity="Hospitalplugin\Entities\User")

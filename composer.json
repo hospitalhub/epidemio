@@ -33,5 +33,6 @@
 	"repositories" : [{
 			"type" : "composer",
 			"url" : "http://wpackagist.org"
-		}]
+		}
+	]
 }
