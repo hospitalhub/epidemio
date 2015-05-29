@@ -3,6 +3,7 @@ use Hospitalplugin\WP\ScriptsAndStyles;
 use Symfony\Component\Yaml\Yaml;
 use Hospitalplugin\WP\Menu;
 use Epidemio\WP\Actions;
+use Hospitalplugin\utils\ExcelExport;
 /*
  * Plugin Name: epidemio
  * Version: 0.1-alpha
@@ -18,6 +19,8 @@ if (! defined ( 'PLUGIN_URL' ))
 	define ( 'PLUGIN_URL', WP_PLUGIN_URL . '/epidemio' );
 
 $cfg = Yaml::parse ( file_get_contents ( __DIR__ . '/epidemio.yml' ) );
+
+ExcelExport::init(); 
 
 $menuPnct = new Menu ();
 $hsac = new ScriptsAndStyles ();

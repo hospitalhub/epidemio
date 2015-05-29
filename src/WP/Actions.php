@@ -24,8 +24,8 @@
 namespace Epidemio\WP;
 
 use Hospitalplugin\DB\DoctrineBootstrap;
-use Epidemio\Entities\Infections;
-use Epidemio\Entities\InfectionsCRUD;
+use Hospitalplugin\Entities\Infections;
+use Hospitalplugin\Entities\InfectionsCRUD;
 /**
  * Actions
  *

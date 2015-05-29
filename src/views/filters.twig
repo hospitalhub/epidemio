@@ -19,6 +19,9 @@
 								selected="selected"           
 				{% endif %}>{{ ward.name }}</option> {% endfor %}
 			</select>
-			<button type="submit" id="excel" name="excel" value="excel">Excel</button>
+			{% if date is defined %}
+				<input type="hidden" name="dataSetName" value="Infections" />
+				<button type="submit" id="excel" name="excel">Excel</button>
+			{% endif %}
 	</form>
 </table>

@@ -1,4 +1,4 @@
 <?php
-use Epidemio\Entities\HospitalForm;
+use Hospitalplugin\Entities\HospitalForm;
 
-HospitalForm::load ( '/../../resources/infectionsZODC.yml', 'Epidemio\Entities\InfectionsZODC' );
+HospitalForm::load ( __DIR__ . '/../../resources/infectionsZODC.yml', 'Hospitalplugin\Entities\InfectionsZODC', __DIR__ . '/../views/' );
