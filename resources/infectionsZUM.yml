@@ -1,5 +1,5 @@
 !1 : MIESIĘCZNA ANALIZA ZAKAŻEŃ UKŁADU MOCZOWEGO
-%Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
+%Data : <input type="text" class="datepicker-lastmonth" name="dataRaportu" style="width: 100px;" />
 !2 : 
 LPKZUM:  liczba pacjentów, u których <b>założono kartę</b> monitorowania cewnikowania pęcherza moczowego
 LPZUM: liczba pacjentów z objawami ZUM

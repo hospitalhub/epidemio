@@ -1,5 +1,5 @@
 !1 : MIESIĘCZNA ANALIZA POWIKŁAŃ KANIULACJI NACZYŃ
-%Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
+%Data : <input type="text" class="datepicker-lastmonth" name="dataRaportu" style="width: 100px;" />
 !2 : Dostęp naczyniowy obwodowy żylny 
 LDZ: liczba wykonanych <b>dostępów naczyniowych</b> 
 LDKZ: liczba wykonanych <b>dobokaniulacji</b>

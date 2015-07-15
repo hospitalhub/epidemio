@@ -1,5 +1,5 @@
 !1 : MIESIĘCZNA ANALIZA ZAKAŻEŃ MIEJSCA OPEROWANEGO W ODDZIALE / PORADNI
-%Data : <input type="text" class="datepicker-month" name="dataRaportu" style="width: 100px;" />
+%Data : <input type="text" class="datepicker-lastmonth" name="dataRaportu" style="width: 100px;" />
 !2 : 
 LKZMO : Ilość założonych <b>kart obserwacji i postępowania z miejscem operowanym</b>
 ZMO1 :  liczba pacjentów zakwalifikowanych do grup ryzyka <b>ZMO I</b>

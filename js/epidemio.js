@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 	});
 	$('.datepicker').datepicker('update', new Date());
 	// yyyy-mm
-	$('.datepicker-month').datepicker({
+	$('.datepicker-lastmonth').datepicker({
 		format : 'yyyy-mm',
 		language : "pl",
 		"autoclose" : true,
@@ -21,7 +21,9 @@ jQuery(document).ready(function($) {
 		startDate : new Date(2014, 11, 1),
 		endDate : nowPlus
 	});
-	$('.datepicker-month').datepicker('update', new Date());
+	var minusMonth = new Date();
+	minusMonth.setMonth(minusMonth.getMonth() - 1);
+	$('.datepicker-lastmonth').datepicker('update', minusMonth);
 	$('.datepicker-month-no-autovalue').datepicker({
 		format : 'yyyy-mm',
 		language : "pl",
