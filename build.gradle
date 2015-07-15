@@ -1,0 +1,8 @@
+apply plugin: 'eclipse'
+
+eclipse {
+  project {
+    natures 'org.eclipse.php.core.PHPNature'
+    //buildCommand 'org.eclipse.wst.validation.validationbuilder', 'org.eclipse.dltk.core.scriptbuilder'
+  }
+}
