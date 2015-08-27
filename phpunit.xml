@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
-	bootstrap="/var/www/vendor/autoload.php" backupGlobals="false" colors="true"
-	convertErrorsToExceptions="true" convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true" stopOnFailure="false">
+    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+    bootstrap="/var/www/vendor/autoload.php" backupGlobals="false" colors="true"
+    convertErrorsToExceptions="true" convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true" stopOnFailure="false">
 	<testsuites>
 		<testsuite name="Tests">
 			<directory suffix=".php">./test/</directory>
@@ -15,6 +15,6 @@
 		</whitelist>
 	</filter>
 	<logging>
-		<log type="coverage-clover" target="build/logs/clover.xml"/>
+		<log type="coverage-clover" target="build/logs/clover.xml" />
 	</logging>
 </phpunit>
